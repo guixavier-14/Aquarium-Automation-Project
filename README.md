@@ -7,8 +7,8 @@
 - Detalhamento do projeto: para a obtenção de dados e controle de parâmetros serão utilizados sensores: temperatura e luminosidade. Para o controle da alimentação dos peixes será utilizado um motor de passo. Para a atuação sobre a temperatura do aquário, será utilizado um aquecedor e uma ventoinha. Para a realização da troca de água, serão utilizadas duas bombas: uma que fará a retirada da água do aquário, e a segunda, que irá injetar água tratada no aquário, a partir de um reservatório externo. Como unidade controlodora, será utilizada uma ESP32. Para a disposição dos dados do projeto, e o controle remoto de parâmetros, será utilizado a plataforma Arduino Iot Cloud, com acesso no aplicativo no smartphone, com conexão à internet.
 
 - Componentes: 
--- ESP32
-- 1 Sensor de temperatura DS18B20
+  ESP32
+  1 Sensor de temperatura DS18B20
 - 1 Sensor de luminosidade LDR
 - 2 Bombas de água
 - 1 Motor de passo
