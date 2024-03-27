@@ -14,8 +14,8 @@
 - 1 Motor de passo
 - 4 Relés 
 - 1 Lâmpada 
-               - 1 Aquecedor de água
-               - 1 Cooler para refrigeração
-               - Mangueira de silicone
-               - Smartphone com conexão com a Internet
+- 1 Aquecedor de água
+- 1 Cooler para refrigeração
+- Mangueira de silicone
+- Smartphone com conexão com a Internet
                
