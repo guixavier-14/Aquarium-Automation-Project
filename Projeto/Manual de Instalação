@@ -9,5 +9,3 @@ A seguir é detalhado um passo a passo para realizar a instalação e configura�
 7. No flow, realize a alteração dos blocos com o broker e porta utilizados
 8. Dê um deploy no flow e verifique se os blocos estão conectados ao broker configurado
 9. No Node-RED, acesse a dashboard para vizualização e controle dos parâmetros
-
-
