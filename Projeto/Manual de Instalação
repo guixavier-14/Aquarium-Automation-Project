@@ -5,7 +5,6 @@ A seguir é detalhado um passo a passo para realizar a instalação e configura�
 3. No código, faça a alteração do broker MQTT e da porta à ser utilizada
 4. Faça o download do programa para o circuito implementado com a ESP32
 5. Instale o arquivo .json com o flow implementado no Node-RED
-6. No Node-RED, BIBLIOTECAS
-7. No flow, realize a alteração dos blocos com o broker e porta utilizados
-8. Dê um deploy no flow e verifique se os blocos estão conectados ao broker configurado
-9. No Node-RED, acesse a dashboard para vizualização e controle dos parâmetros
+6. No flow, realize a alteração dos blocos com o broker e porta utilizados
+7. Dê um deploy no flow e verifique se os blocos estão conectados ao broker configurado
+8. No Node-RED, acesse a dashboard para vizualização e controle dos parâmetros
