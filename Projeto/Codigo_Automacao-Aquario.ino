@@ -8,8 +8,8 @@
  
 WiFiClient wifiClient;       
 
-const char* SSID = "XavierNet2G";
-const char* PASSWORD = "rede@xavier@net@2020";
+const char* SSID = "";
+const char* PASSWORD = "";
 const char* BROKER_MQTT = "mqtt.eclipseprojects.io";
 int BROKER_PORT = 1883;                   
 
