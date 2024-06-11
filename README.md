@@ -1,4 +1,4 @@
-AQUARIUM AUTOMATION PROJECT BASED ON A IOT WITH MQTT 
+AQUARIUM AUTOMATION PROJECT BASED ON IOT WITH MQTT COMMUNICATION 
 
 --------------------------------------------------------------------------------------------------------------------------
 
