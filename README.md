@@ -1,4 +1,4 @@
-** Project Aquarium Automation**
+Project Aquarium Automation
 
 --------------------------------------------------------------------------------------------------------------------------
 
@@ -31,5 +31,5 @@ For data acquisition and parameter control, temperature and light sensors will b
 For visual display of project data and remote parameter control, a dashboard implemented in Node-RED will be used. This dashboard will connect to an Eclipse IoT broker. The same broker will be connected to the ESP32, which will access the broker via a Wi-Fi connection. The following figure provides a detailed overview of the project's architecture.
 
     
-![image](https://github.com/guixavier-14/Automacao-Aquario/assets/163915909/1a247a63-40aa-4807-92a1-5a5d3ff2f345)
+![image](https://github.com/guixavier-14/Automacao-Aquario/issues/1#issue-2345217897)
 
