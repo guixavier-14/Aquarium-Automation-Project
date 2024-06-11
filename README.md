@@ -1,4 +1,4 @@
-# Projeto de Automação de Aquário
+**# Project Aquarium Automation**
 
 --------------------------------------------------------------------------------------------------------------------------
 
@@ -7,7 +7,7 @@ In the world of aquaristics, planted aquariums require a combination of fauna an
 
 --------------------------------------------------------------------------------------------------------------------------
 
-Project Objective:
+**Project Objective:**
 The objective of this project is to automate an aquarium for the remote monitoring and control of various parameters, such as water temperature, fish feeding, and lighting. Additionally, the project aims to implement a system that allows for the remote addition of water to the aquarium to normalize these parameters.
 
 --------------------------------------------------------------------------------------------------------------------------
