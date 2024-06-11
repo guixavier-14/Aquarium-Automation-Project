@@ -1,10 +1,10 @@
-A seguir é detalhado um passo a passo para realizar a instalação e configuração do projeto:
+Below is a step-by-step guide for installing and configuring the project:
 
-1. Instale o arquivo .ino com o código implementado para o projeto;
-2. No código, faça a alteração do ssid e da senha da rede à ser utilizada;
-3. No código, faça a alteração do broker MQTT e da porta à ser utilizada;
-4. Faça o download do programa para o circuito implementado com a ESP32;
-5. Instale o arquivo .json com o flow implementado no Node-RED;
-6. No flow, realize a alteração dos blocos com o broker e porta utilizados;
-7. Dê um deploy no flow e verifique se os blocos estão conectados ao broker configurado;
-8. No Node-RED, acesse a dashboard para visualização e controle dos parâmetros.
+1. Install the .ino file with the code implemented for the project;
+2. In the code, change the SSID and network password to be used;
+3. In the code, change the MQTT broker and port to be used;
+4. Download the program to the circuit implemented with the ESP32;
+5. Install the .json file with the flow implemented in Node-RED;
+6. In the flow, make the necessary changes to the blocks with the broker and port used;
+7. Deploy the flow and check if the blocks are connected to the configured broker;
+8. In Node-RED, access the dashboard to view and control the parameters.
