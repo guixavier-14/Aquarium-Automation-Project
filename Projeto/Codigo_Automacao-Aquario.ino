@@ -1,16 +1,32 @@
 #include <WiFi.h> 
 #include <PubSubClient.h>
+#include <DHT.h>
 
 #define LED1 23
 #define LED2 22
 #define LED3 21
 #define LED4 18
- 
+#define LDR 33
+#define DHT11_PIN 32
+#define Alimentador 19
+
+
+int valorsensor;
+int i;
+int temperatura;
+float temperaturaSensor;
+char temperaturaPublish[22];
+float temperaturaAnt;
+int nivelTemperatura;
+int control;
+
 WiFiClient wifiClient;       
 
-const char* SSID = "";
-const char* PASSWORD = "";
-const char* BROKER_MQTT = "mqtt.eclipseprojects.io";
+DHT dht11(DHT11_PIN, DHT11);
+
+const char* SSID = " ";
+const char* PASSWORD = " ";
+const char* BROKER_MQTT = " ";
 int BROKER_PORT = 1883;                   
 
 #define ID_MQTT  "XavierESP"  
@@ -18,6 +34,10 @@ int BROKER_PORT = 1883;
 #define TOPIC_PUBLISH2 "XavierESP/LED2"
 #define TOPIC_PUBLISH3 "XavierESP/LED3"
 #define TOPIC_PUBLISH4 "XavierESP/LED4"
+#define TOPIC_PUBLISH5 "XavierESP/NivelTemperatura"
+#define TOPIC_PUBLISH6 "XavierESP/Temperatura"
+#define TOPIC_PUBLISH7 "XavierESP/Alimentador"
+
 PubSubClient MQTT(wifiClient);        
 
 void mantemConexoes();  
@@ -32,7 +52,11 @@ void setup() {
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
-  pinMode(LED4, OUTPUT);        
+  pinMode(LED4, OUTPUT);
+  pinMode(LDR, INPUT); 
+  pinMode(Alimentador, OUTPUT);
+
+  dht11.begin();   
 
   Serial.begin(115200);
 
@@ -95,6 +119,9 @@ void conectaMQTT() {
             MQTT.subscribe(TOPIC_PUBLISH2);
             MQTT.subscribe(TOPIC_PUBLISH3);
             MQTT.subscribe(TOPIC_PUBLISH4);
+            MQTT.subscribe(TOPIC_PUBLISH5);
+            MQTT.subscribe(TOPIC_PUBLISH6);
+            MQTT.subscribe(TOPIC_PUBLISH7);
         } 
         else {
             Serial.println("Nao foi possivel se conectar ao broker.");
@@ -106,7 +133,62 @@ void conectaMQTT() {
 
 
 void enviaValores() {
-  
+
+  valorsensor = analogRead(LDR);
+
+  if (valorsensor < 500) { 
+
+    digitalWrite(LED1, LOW);
+
+    if (i == 1){
+      MQTT.publish(TOPIC_PUBLISH1, "true");
+    }
+
+    i = 0;
+    
+  } else {
+    
+    digitalWrite(LED1, HIGH);
+
+    if (i == 0){
+      MQTT.publish(TOPIC_PUBLISH1, "false");
+    }
+
+    i = 1;
+  }
+
+
+  temperaturaSensor = dht11.readTemperature();
+  dtostrf(temperaturaSensor,2,2,temperaturaPublish);
+
+  if(temperaturaSensor != temperaturaAnt)
+  {
+      MQTT.publish(TOPIC_PUBLISH6, temperaturaPublish);
+      temperaturaAnt = temperaturaSensor;
+  }
+    
+    
+  if(control == 1)
+  {
+      if (nivelTemperatura >= temperatura) {
+        digitalWrite(LED3, HIGH);
+        digitalWrite(LED2, LOW);
+
+        MQTT.publish(TOPIC_PUBLISH2, "true");
+        MQTT.publish(TOPIC_PUBLISH3, "false");
+      }
+
+      if (nivelTemperatura < temperatura) {
+        digitalWrite(LED2, HIGH);
+        digitalWrite(LED3, LOW);
+            
+        MQTT.publish(TOPIC_PUBLISH2, "false");
+        MQTT.publish(TOPIC_PUBLISH3, "true");
+      }
+
+      control = 0;
+  }
+
 }
 
 
@@ -128,35 +210,11 @@ void recebePacote(char* topic, byte* payload, unsigned int length)
     if(strcmp(topic, TOPIC_PUBLISH1) == 0)
     {
       if (msg == "false") {
-        digitalWrite(LED1, LOW);
-      }
-
-      if (msg == "true") {
         digitalWrite(LED1, HIGH);
       }
-    }
-    
-
-    if(strcmp(topic, TOPIC_PUBLISH2) == 0)
-    {
-      if (msg == "false") {
-        digitalWrite(LED2, LOW);
-      }
 
       if (msg == "true") {
-        digitalWrite(LED2, HIGH);
-      }
-    }
-
-
-    if(strcmp(topic, TOPIC_PUBLISH3) == 0)
-    {
-      if (msg == "false") {
-        digitalWrite(LED3, LOW);
-      }
-
-      if (msg == "true") {
-        digitalWrite(LED3, HIGH);
+        digitalWrite(LED1, LOW);
       }
     }
 
@@ -164,13 +222,50 @@ void recebePacote(char* topic, byte* payload, unsigned int length)
     if(strcmp(topic, TOPIC_PUBLISH4) == 0)
     {
       if (msg == "false") {
-        digitalWrite(LED4, LOW);
+        digitalWrite(LED4, HIGH);
       }
 
       if (msg == "true") {
-        digitalWrite(LED4, HIGH);
+        digitalWrite(LED4, LOW);
       }
     }
 
-}
+    if(strcmp(topic, TOPIC_PUBLISH5) == 0)
+    {
+      nivelTemperatura = msg.toInt();
+      control = 1;
 
+    }
+
+
+    if(strcmp(topic, TOPIC_PUBLISH6) == 0)
+    {
+        temperatura = msg.toInt();
+
+        if (nivelTemperatura >= temperatura) {
+          digitalWrite(LED3, HIGH);
+          digitalWrite(LED2, LOW);
+
+          MQTT.publish(TOPIC_PUBLISH2, "true");
+          MQTT.publish(TOPIC_PUBLISH3, "false");
+        }
+
+        if (nivelTemperatura < temperatura) {
+          digitalWrite(LED2, HIGH);
+          digitalWrite(LED3, LOW);
+              
+          MQTT.publish(TOPIC_PUBLISH2, "false");
+          MQTT.publish(TOPIC_PUBLISH3, "true");
+        }
+    }
+
+
+    if(strcmp(topic, TOPIC_PUBLISH7) == 0)
+    {
+      digitalWrite(Alimentador, HIGH);
+      delay(100);
+      digitalWrite(Alimentador, LOW);
+    }
+
+  
+}
