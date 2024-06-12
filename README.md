@@ -33,6 +33,6 @@ For visual display of project data and remote parameter control, a dashboard imp
     
 ![Esquema-Projeto_IoT](https://github.com/guixavier-14/Automacao-Aquario/assets/117041423/3c038a2e-c2ef-49c3-9850-174e5476abb9)
 
-https://github.com/guixavier-14/Aquarium-Automation-Project/issues/2#issue-2347693682
+
 
 
