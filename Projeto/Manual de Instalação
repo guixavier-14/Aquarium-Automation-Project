@@ -1,3 +1,7 @@
+First, assemble the project according to the schematic diagram shown below.
+![schematic](https://github.com/guixavier-14/Aquarium-Automation-Project/assets/117041423/9d865c9c-c2ff-4031-8886-3c0e12ae1992)
+
+So, follow the next step. 
 Below is shown a step-by-step guide for installing and configuring the project:
 
 1. Install the .ino file with the code implemented for the project;
@@ -8,3 +12,5 @@ Below is shown a step-by-step guide for installing and configuring the project:
 6. In the flow, make the necessary changes to the blocks with the broker and port used;
 7. Deploy the flow and check if the blocks are connected to the configured broker;
 8. In Node-RED, access the dashboard to view and control the parameters.
+
+
