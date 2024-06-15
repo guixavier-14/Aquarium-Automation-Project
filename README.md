@@ -28,7 +28,7 @@ The objective of this project is to automate an aquarium for the remote monitori
 **Project Details:**
 For data acquisition and parameter control, temperature and light sensors will be used. A servo motor will be employed to manage fish feeding. To regulate the aquarium's temperature, a heater and a fan for cooling will be utilized. A water pump will be used to replenish the aquarium with treated water from an external reservoir. The ESP32 will serve as the control unit.
 
-For visual display of project data and remote parameter control, a dashboard implemented in Node-RED will be used. This dashboard will connect to an Eclipse IoT broker. The same broker will be connected to the ESP32, which will access the broker via a Wi-Fi connection. The following figure provides a detailed overview of the project's architecture.
+For visual display of project data and remote parameter control, a dashboard implemented in Node-RED will be used. This dashboard will connect to an Public Eclipse IoT broker. The same broker will be connected to the ESP32, which will access the broker via a Wi-Fi connection. The following figure provides a detailed overview of the project's architecture.
 
     
 ![Esquema-Projeto_IoT](https://github.com/guixavier-14/Automacao-Aquario/assets/117041423/3c038a2e-c2ef-49c3-9850-174e5476abb9)
