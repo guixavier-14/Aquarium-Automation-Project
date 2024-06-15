@@ -30,7 +30,11 @@ For data acquisition and parameter control, temperature and light sensors will b
 
 For visual display of project data and remote parameter control, a dashboard implemented in Node-RED will be used. This dashboard will connect to an Public Eclipse IoT broker. The same broker will be connected to the ESP32, which will access the broker via a Wi-Fi connection. The following figure provides a detailed overview of the project's architecture.
 
+To facilitate remote access to the broken application on Node-RED, the Remote-RED smartphone application was used. This allows monitoring and control of delay settings from anywhere, with internet access available.
+
 
 ![image](https://github.com/guixavier-14/Aquarium-Automation-Project/assets/163915909/1251bca4-ac49-4893-bfcd-14890428c60d)
+
+Na figura a seguir, é apresentado um esquemático de montagem do circuito implementado, com a indicação dos pinos utilizados da ESP32 e as conexões realizadas entre os dispositivos.
 
 
