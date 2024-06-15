@@ -40,5 +40,6 @@ In the following figure, a schematic of the implemented circuit is presented, in
 ![image](https://github.com/guixavier-14/Aquarium-Automation-Project/assets/163915909/877cb1a9-8296-428d-8ed9-44f7af619e42)
 
 The video at the link below shows the functioning.
+
 https://youtu.be/tToWVjre54c
 
