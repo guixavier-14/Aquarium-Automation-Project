@@ -35,7 +35,10 @@ To facilitate remote access to the broken application on Node-RED, the Remote-RE
 
 ![image](https://github.com/guixavier-14/Aquarium-Automation-Project/assets/163915909/1251bca4-ac49-4893-bfcd-14890428c60d)
 
-Na figura a seguir, é apresentado um esquemático de montagem do circuito implementado, com a indicação dos pinos utilizados da ESP32 e as conexões realizadas entre os dispositivos.
+In the following figure, a schematic of the implemented circuit is presented, indicating the pins used on the ESP32 and the connections made between the devices.
 
 ![image](https://github.com/guixavier-14/Aquarium-Automation-Project/assets/163915909/877cb1a9-8296-428d-8ed9-44f7af619e42)
+
+The video at the link below shows the functioning.
+https://youtu.be/tToWVjre54c
 
